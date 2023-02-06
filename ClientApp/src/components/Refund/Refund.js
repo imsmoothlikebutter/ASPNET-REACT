@@ -12,7 +12,12 @@ export class Refund extends Component {
         this.getData();
     }
 
+    
     static renderCTable(c) {
+        function btnTapped() {
+            var x = document.getElementById("1");
+            x.style.display = "none";
+        }
         return (
 
             <table className="table table-striped" aria-labelledby="tableLabel">
@@ -27,12 +32,14 @@ export class Refund extends Component {
                 </thead>
                 <tbody>
                     {c.map(Refund =>
-                        <tr key={Refund.requestId}>
+                        <tr key={Refund.requestId} id="1">
                             <td>{Refund.orderId}</td>
                             <td>{Refund.reason}</td>
                             <td>{Refund.status}</td>
                             <td>
-                                <a className="action" onClick={(id) => this.handleEdit(Refund.requestId)}>Edit</a>  </td>
+                                <a onClick={function (e) {
+                                    btnTapped();
+                                }}>Delete</a>  </td>
                         </tr>
                     )}
                 </tbody>
