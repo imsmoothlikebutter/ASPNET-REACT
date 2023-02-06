@@ -49,6 +49,7 @@ export class RefundExchangesStaff extends Component {
                                 <th scope="col">OrderID</th>
                                 <th scope="col">Reason</th>
                                 <th scope="col">Status</th>
+                                <th scope="col">Assign Shipping</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -66,6 +67,21 @@ export class RefundExchangesStaff extends Component {
                                             <option value="rejected">Rejected</option>
                                         </select>
                                         <input type="submit" value="Update" />
+                                    </form>
+                                </td>
+                                <td>
+                                    <form>
+                                        <select name="shippingAgent" id="shippingAgent">
+                                            <option value="DHL">DHL</option>
+                                            <option value="SingPOST">SingPOST</option>
+                                            <option value="FedEX">FedEX</option>
+                                        </select>
+                                        <select name="shippingType" id="shippingType">
+                                            <option value="1day">1 Day</option>
+                                            <option value="3day">3 Days</option>
+                                            <option value="7day">7 Days</option>
+                                        </select>
+                                        <input type="submit" value="Assign" />
                                     </form>
                                 </td>
                             </tr>
