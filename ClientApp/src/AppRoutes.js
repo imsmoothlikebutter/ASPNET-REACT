@@ -3,8 +3,9 @@ import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { Read } from "./components/Manufacturer/Read";
 import { Create } from "./components/Manufacturer/Create";
-import { ShippingAgent } from "./components/ShippingAgent/ShippingAgent";
-
+import { Update } from "./components/Manufacturer/Update";
+import { SRead } from "./components/ShippingAgent/SRead";
+import { SCreate } from "./components/ShippingAgent/SCreate";
 const AppRoutes = [
   {
     index: true,
@@ -27,8 +28,16 @@ const AppRoutes = [
         element: <Create />
     },
     {
+        path: '/Manufacturer/Update',
+        element: <Update />
+    },
+    {
         path: '/ShippingAgent',
-        element: <ShippingAgent />
+        element: <SRead />
+    },
+    {
+        path: '/ShippingAgent/Create',
+        element: <SCreate />
     }
 ];
 

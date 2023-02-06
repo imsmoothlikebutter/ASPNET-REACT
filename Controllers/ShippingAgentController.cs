@@ -8,7 +8,7 @@ namespace ICT2106.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class ManufacturerController : ControllerBase
+public class ShippingAgentController : ControllerBase
 {
     // private readonly ApplicationDbContext _reactContext;
     /* public ManufacturerController(ApplicationDbContext reactContext) {
@@ -16,23 +16,14 @@ public class ManufacturerController : ControllerBase
      }*/
 
 
-    Manufacturer[] m = new Manufacturer[] {
-        new Manufacturer{   Id =1,
-        ManufacturerName ="John",
-        ManufacturerContactNumber = "98765443",
-        ManufacturerEmail = "John@hotmail.com"},
-        new Manufacturer {
+    ShippingAgent[] m = new ShippingAgent[] {
+        new ShippingAgent{   Id =1,
+        ShippingAgentName ="DHL" },
+        new ShippingAgent {
             Id = 2,
-        ManufacturerName = "George",
-        ManufacturerContactNumber = "95424354",
-        ManufacturerEmail = "George@hotmail.com"
-        }, new Manufacturer {
-            Id = 3,
-        ManufacturerName = "Mary",
-        ManufacturerContactNumber = "92434354",
-        ManufacturerEmail = "Mary@hotmail.com"
+        ShippingAgentName ="Parcel Force"
         }
-    };
+};
     private static readonly string[] Email = new[]
     {
         "George@hotmail.com", "King@gmail.com", "Queen@outlook.com", "Jack@hotmail.com"
@@ -45,15 +36,15 @@ public class ManufacturerController : ControllerBase
     {
         "92843545", "90038244", "98762233","93454644"
     };
-    private readonly ILogger<ManufacturerController> _logger;
-    public ManufacturerController(ILogger<ManufacturerController> logger)
+    private readonly ILogger<ShippingAgent> _logger;
+    public ShippingAgentController(ILogger<ShippingAgent> logger)
     {
         _logger = logger;
     }
 
 
     [HttpGet]
-    public IEnumerable<Manufacturer> Get()
+    public IEnumerable<ShippingAgent> Get()
     {
         /*return Enumerable.Range(1, 5).Select(index => new Manufacturer
         {
@@ -65,14 +56,7 @@ public class ManufacturerController : ControllerBase
         .ToArray();*/
         return m;
     }
-    [HttpPost]
-    [Route("test")]
-    public IActionResult Post([FromBody] Manufacturer comment)
-    {
-        m.Append(comment);
-        
-        return Ok(m);
-    }
+  
     /*[HttpGet]
     public async Task<IActionResult> getManufacturers()
     {

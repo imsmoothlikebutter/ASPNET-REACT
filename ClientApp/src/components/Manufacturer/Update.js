@@ -23,14 +23,7 @@ export class Update extends Component {
                     </tr>
                 </thead>
                 <tbody>
-                    {m.map(manufacturers =>
-                        <tr key={manufacturers.date}>
-                            <td>{manufacturers.date}</td>
-                            <td>{manufacturers.manufacturerName}</td>
-                            <td>{manufacturers.manufacturerContactNumber}</td>
-                            <td>{manufacturers.manufacturerEmail}</td>
-                        </tr>
-                    )}
+                
                 </tbody>
             </table>
         );
@@ -39,7 +32,7 @@ export class Update extends Component {
     render() {
         let contents = this.state.loading
             ? <p><em>Loading...</em></p>
-            : Read.renderMTable(this.state.m);
+            : Update.renderMTable(this.state.m);
 
         return (
             <div>

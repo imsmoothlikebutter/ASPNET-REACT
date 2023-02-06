@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 
 export class Read extends Component {
 
-
     constructor(props) {
+        const name = localStorage.getItem("Name");
+        const email = localStorage.getItem("Email");
+        const contact = localStorage.getItem("Contact");
         super(props);
-        this.state = { m: [], loading: true };
+        this.state = {
+            m: [], loading: true , n:name,e:email,c:contact
+        }
+       
     }
 
     componentDidMount() {
@@ -62,7 +67,14 @@ export class Read extends Component {
         const response = await fetch('https://localhost:44417/manufacturer');
         const data = await response.json();
         console.log(data);
-       this.setState({ m: data, loading: false });
+        var newarr = data;
+        var ce = {
+            manufacturerName: this.state.n,
+            manufacturerContactNumber: this.state.c,
+            manufacturerEmail: this.state.e,
+        }
+        newarr.push(ce);
+        this.setState({ m: newarr, loading: false });
     }
    
 }
