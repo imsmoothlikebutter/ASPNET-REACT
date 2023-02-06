@@ -11,6 +11,7 @@ import { RefundExchangesStaff } from "./components/RefundExchanges/RefundExchang
 import { ApplyRefund } from "./components/RefundExchanges/ApplyRefund";
 import { ApplyExchange } from "./components/RefundExchanges/ApplyExchange";
 import { Refund } from "./components/Refund/Refund";
+import { RefundCreate } from "./components/Refund/RefundCreate";
 
 const AppRoutes = [
   {
@@ -63,7 +64,11 @@ const AppRoutes = [
     }, {
         path: "/Refund",
         element: <Refund />
-        }
+    },
+    {
+        path: "/Refund/RefundCreate",
+        element: <RefundCreate />
+    }
 ];
 
 export default AppRoutes;
