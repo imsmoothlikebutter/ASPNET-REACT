@@ -21,6 +21,7 @@ export class ApplyExchange extends Component {
                     <input type="text" id="reason"></input>
                     <br />
                     <label for="imageUpload">Upload Image:</label>
+                    <input type="file" id="imageUpload" name="filename"></input>
                     <br />
                     <input type="submit" value="Submit"></input>
 
