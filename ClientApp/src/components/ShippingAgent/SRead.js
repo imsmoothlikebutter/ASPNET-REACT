@@ -37,14 +37,14 @@ export class SRead extends Component {
                 <tfoot>
                     <tr>
                         <td>
-                            <a onClick={event => window.location.href = '/shippingagent/create'}>Create New Shipping Agent</a></td>
-                        <td>    <a onClick={event => window.location.href = '/shippingagent/assign'}>Assign Shipping Agent</a></td>
+                            <a onClick={event => window.location.href = '/Shippingagent/Create'}>Create New Shipping Agent</a></td>
+                        <td>    <a onClick={event => window.location.href = '/Shippingagent/Assign'}>Assign Shipping Agent</a></td>
+                        <td>    <a onClick={event => window.location.href = '/orders'}>View Orders</a></td>
                     </tr>
                   
                 
                 </tfoot>
             </table>
-
         );
     }
 
@@ -56,7 +56,6 @@ export class SRead extends Component {
         return (
             <div>
                 <h1 id="tableLabel">Shipping Agents</h1>
-                <p>This component demonstrates fetching data from the server.</p>
                 {contents}
             </div>
         );
@@ -67,8 +66,7 @@ export class SRead extends Component {
         console.log(data);
         var newarr = data;
         var ce = {
-            ShippingAgentName: this.state.sn,
-         
+            shippingAgentName: this.state.sn,
         }
         newarr.push(ce);
         this.setState({ ms: newarr, loading: false });

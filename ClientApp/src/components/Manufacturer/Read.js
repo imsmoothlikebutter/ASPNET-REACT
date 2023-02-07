@@ -6,9 +6,11 @@ export class Read extends Component {
         const name = localStorage.getItem("Name");
         const email = localStorage.getItem("Email");
         const contact = localStorage.getItem("Contact");
+        const product = localStorage.getItem("product");
+        const quantity = localStorage.getItem("quantity");
         super(props);
         this.state = {
-            m: [], loading: true , n:name,e:email,c:contact
+            m: [], loading: true , n:name,e:email,c:contact , p: product, q :quantity
         }
        
     }
@@ -19,7 +21,8 @@ export class Read extends Component {
 
     static renderMTable(m) {
         return (
-          
+            <div>
+          <div id = "Manufacturer Table">
             <table className="table table-striped" aria-labelledby="tableLabel">
                 <thead>
                     <tr>
@@ -43,10 +46,33 @@ export class Read extends Component {
                     )}
                 </tbody>
                 <tfoot>
-                    <a onClick={event => window.location.href = '/Manufacturer/create'}>Create New Manufacturer</a> 
+                    <tr>
+                        <td><a onClick={event => window.location.href = '/Manufacturer/create'}>Create New Manufacturer</a> </td>
+                        <td><a onClick={event => window.location.href = '/Manufacturer/reorder'}>Re-order</a>
+                        </td>                    </tr>
+                 
                 </tfoot>
-            </table>    
-        
+                </table>    
+            </div>
+                <div id="Reorder Table">
+                    <h1 id="tableLabel">Reorder Details</h1>
+                    <table className="table table-striped" aria-labelledby="tableLabel">
+                        <thead>
+                            <tr>
+                            <th>Product</th>
+                            <th>Quantity</th>
+                            <th>Manufacturer</th>
+                            <th>Date</th>
+                        </tr></thead>
+                        <tbody><tr><td>Detergent</td>
+                            <td>4</td>
+                            <td>George</td>
+                            <td>07/02/2023</td></tr></tbody>
+                        </table>
+           
+
+                    </div>
+            </div>
         );
     }
 
@@ -58,7 +84,6 @@ export class Read extends Component {
         return (
             <div>
                 <h1 id="tableLabel">Manufacturers</h1>
-                <p>This component demonstrates fetching data from the server.</p>
                 {contents}
             </div>
         );
@@ -66,13 +91,14 @@ export class Read extends Component {
     async getData() {
         const response = await fetch('https://localhost:44417/manufacturer');
         const data = await response.json();
-        console.log(data);
+      
         var newarr = data;
         var ce = {
             manufacturerName: this.state.n,
             manufacturerContactNumber: this.state.c,
             manufacturerEmail: this.state.e,
         }
+
         newarr.push(ce);
         this.setState({ m: newarr, loading: false });
     }

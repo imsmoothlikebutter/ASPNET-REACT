@@ -3,9 +3,11 @@ import { FetchData } from "./components/FetchData";
 import { Home } from "./components/Home";
 import { Read } from "./components/Manufacturer/Read";
 import { Create } from "./components/Manufacturer/Create";
-import { Update } from "./components/Manufacturer/Update";
+import { Reorder } from "./components/Manufacturer/Reorder";
+import { Orders } from "./components/ShippingAgent/Orders";
 import { SRead } from "./components/ShippingAgent/SRead";
 import { SCreate } from "./components/ShippingAgent/SCreate";
+import { SAssign } from "./components/ShippingAgent/SAssign";
 import { RefundExchangesCust } from "./components/RefundExchanges/RefundExchangesCust";
 import { RefundExchangesStaff } from "./components/RefundExchanges/RefundExchangesStaff";
 import { ApplyRefund } from "./components/RefundExchanges/ApplyRefund";
@@ -34,8 +36,8 @@ const AppRoutes = [
         element: <Create />
     },
     {
-        path: '/Manufacturer/Update',
-        element: <Update />
+        path: '/Manufacturer/Reorder',
+        element: <Reorder />
     },
     {
         path: '/ShippingAgent',
@@ -44,6 +46,10 @@ const AppRoutes = [
     {
         path: '/ShippingAgent/Create',
         element: <SCreate />
+    },
+    {
+        path: '/ShippingAgent/Assign',
+        element: <SAssign />
     },
     {
         path: '/RefundExchangesCust',
@@ -63,7 +69,11 @@ const AppRoutes = [
     }, {
         path: "/Refund",
         element: <Refund />
-        }
+    }
+    , {
+        path: "/orders",
+        element: <Orders />
+    }
 ];
 
 export default AppRoutes;
