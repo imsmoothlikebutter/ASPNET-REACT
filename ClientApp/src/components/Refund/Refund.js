@@ -44,7 +44,7 @@ export class Refund extends Component {
                     )}
                 </tbody>
                 <tfoot>
-                    <a onClick={event => window.location.href = '/Refund/create'}>Create New Refund</a>
+                    <a onClick={event => window.location.href = '/Refund/RefundCreate'}>Create New Refund</a>
                 </tfoot>
             </table>
 
